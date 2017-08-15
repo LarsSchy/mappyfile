@@ -8,16 +8,19 @@ def test_all_maps():
 
     sample_dir = os.path.join(os.path.dirname(__file__), "sample_maps")
 
-    p = Parser(expand_includes=False)
+    #p = Parser(expand_includes=False, add_linebreaks=False)
 
-    for fn in os.listdir(sample_dir):
-        print(fn)
-        try:
-            ast = p.parse_file(os.path.join(sample_dir, fn))
-            #ast.to_png_with_pydot(r'C:\Temp\Trees\%s.png' % os.path.basename(fn))
-        except:
-            logging.warning("Cannot process %s ", fn)
-            raise
+    for fn in sorted(os.listdir(sample_dir)):
+        if fn == "rfc14.map":
+            p = Parser(expand_includes=False, add_linebreaks=False)
+            print(fn)
+            try:
+                ast = p.parse_file(os.path.join(sample_dir, fn))
+                #ast.to_png_with_pydot(r'C:\Temp\Trees\%s.png' % os.path.basename(fn))
+            except Exception as ex:
+                logging.warning("Cannot process %s ", fn)
+                logging.error(ex)
+                #raise
 
 def test_includes():
     p = Parser()

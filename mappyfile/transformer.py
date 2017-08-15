@@ -240,15 +240,22 @@ class MapfileToDict(Transformer):
     def float(self, t):
         v = t[0]
         return float(v)
+
     def bare_string(self, t):
+        """
+        Convert all keywords to uppercase for easier 
+        validation
+        """
         if t:
             v = t[0]
         else:
             v = t            
-        return v
+        return v.upper()
+
     def string(self, t):
         v = t[0].value
         return v
+
     def path(self, t):
         v = t[0]
         return v

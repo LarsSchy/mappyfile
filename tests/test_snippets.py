@@ -578,6 +578,6 @@ def run_tests():
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    #test_no_linebreaks()
-    run_tests()
+    test_style_pattern3()
+    #run_tests()
     print("Done!")

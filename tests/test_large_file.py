@@ -13,7 +13,7 @@ def output(fn):
     Parse, transform, and pretty print 
     the result
     """
-    p = Parser()
+    p = Parser(add_linebreaks=False)
     m = MapfileToDict()
 
     ast = p.parse_file(fn)
