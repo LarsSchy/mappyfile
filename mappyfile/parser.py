@@ -78,8 +78,8 @@ class Parser(object):
 
     def parse(self, text, fn=None):
         """
-        Parse the Mapfile, using one of three options, from the quickest (LALR)
-        to slowest, but handles all cases
+        Parse the Mapfile, using one of two options, from the quickest (LALR)
+        to slowest (Earley), but handles all cases
         """
 
         if self.expand_includes:
@@ -91,6 +91,7 @@ class Parser(object):
             except (ParseError, UnexpectedInput) as ex:
                 log.error("Parsing with LALR unsuccessful")
                 log.info(ex)
+                raise
 
         log.info("Attempting to parse with Earley")
 

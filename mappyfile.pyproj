@@ -5,13 +5,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c0748363-1c92-4ed1-8aec-6a098456f29a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tests\test_validation.py</StartupFile>
+    <StartupFile>tests\test_errors.py</StartupFile>
     <SearchPath>.</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>mappyfile</Name>
     <RootNamespace>mappyfile</RootNamespace>
-    <InterpreterId>MSBuild|mappyfile|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>{88b7dbb9-2a90-463f-a4c6-c45ffaa8b93a}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -545,6 +546,7 @@
     <Compile Include="tests\test_pprint.py" />
     <Compile Include="tests\test_ordereddict.py" />
     <Compile Include="tests\test_sample_maps.py" />
+    <Compile Include="tests\test_errors.py" />
     <Compile Include="tests\test_snippets.py" />
     <Compile Include="tests\test_transformer.py" />
     <Compile Include="tests\test_validation.py">
@@ -555,6 +557,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="..\..\VirtualEnvs\mappyfile\">
+      <Id>{88b7dbb9-2a90-463f-a4c6-c45ffaa8b93a}</Id>
+      <BaseInterpreter>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</BaseInterpreter>
+      <Version>2.7</Version>
+      <Description>mappyfile (Python 64-bit 2.7)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>Amd64</Architecture>
+    </Interpreter>
     <Interpreter Include="C:\VirtualEnvs\mappyfile3\">
       <Id>mappyfile3</Id>
       <Version>3.6</Version>
